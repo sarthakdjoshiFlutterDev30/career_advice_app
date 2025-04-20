@@ -192,22 +192,22 @@ Skills: Grooming, Communication, Hospitality
 Jobs: Travel Agent, Tour Guide, Holiday Planner
 ''',
     '💻 Technology - Developer': '''
-    'Skills: Coding (Java, Dart, Flutter, Python)\n
+    Skills: Coding (Java, Dart, Flutter, Python)\n
     Courses: B.Tech CSE, MCA, Bootcamps\n
     Jobs: App Developer, Backend Dev, Web Dev\n
-    Tools: Flutter, React, Firebase'
+    Tools: Flutter, React, Firebase
     ''',
     '🎥 Media - Design': '''
-  'Courses: Graphic/Interior/Fashion Design\n
-  Jobs: Designer, UI/UX, Animator, VFX'
+  Courses: Graphic/Interior/Fashion Design\n
+  Jobs: Designer, UI/UX, Animator, VFX
   ''',
     '📱 Digital - Marketing': '''
-    'Skills: SEO, SEM, Social Media\n 
-    Jobs: Digital Marketer, Content Creator'
+    Skills: SEO, SEM, Social Media\n 
+    Jobs: Digital Marketer, Content Creator
     ''',
     '✈️ Hospitality - Hotel Management': '''
-    'Courses: BHMCT\n
-    Jobs: Hotel Manager, Chef, Front Desk'
+    Courses: BHMCT\n
+    Jobs: Hotel Manager, Chef, Front Desk
     ''',
   };
 
