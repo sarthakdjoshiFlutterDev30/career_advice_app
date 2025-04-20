@@ -1,4 +1,3 @@
-import 'package:career_advice_app/CareerSelector.dart';
 import 'package:career_advice_app/splash.dart';
 import 'package:flutter/material.dart';
 
