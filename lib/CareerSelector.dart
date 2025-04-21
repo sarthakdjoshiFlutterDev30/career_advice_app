@@ -97,7 +97,7 @@ class _CareerSelectorState extends State<CareerSelector> {
   - Prepares students for various roles in agriculture, including farm management, agronomy, and agricultural research.\n
   ''',
     "📚 SSC Exam": '''
-  - **Staff Selection Commission (SSC)**: Conducts exams for various government jobs.\n
+  - Staff Selection Commission (SSC): Conducts exams for various government jobs.\n
   - Popular roles include SSC MTS (Multi-Tasking Staff), SSC GD (General Duty), and clerical positions.\n
   - Prepares students for competitive exams leading to stable government careers.\n
   ''',
