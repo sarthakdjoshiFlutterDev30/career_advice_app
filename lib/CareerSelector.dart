@@ -1,3 +1,4 @@
+import 'package:career_advice_app/profile.dart';
 import 'package:flutter/material.dart';
 
 class CareerSelector extends StatefulWidget {
@@ -137,10 +138,40 @@ class _CareerSelectorState extends State<CareerSelector> {
   - Basic typing, attention to detail, and software knowledge are essential.\n
   ''',
   };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Career Guidance After 10th"), centerTitle: true),
+      appBar: AppBar(
+        title: Text("Career Guidance After 10th"),
+        centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            // Drawer Header
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                "Welcome",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            // Drawer Items
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("Profile"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
 
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -169,8 +200,11 @@ class _CareerSelectorState extends State<CareerSelector> {
                   child: SingleChildScrollView(
                     child: Text(
                       careerDetails[selectedCareer!]!,
-                      style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,
-                        color: Colors.blueAccent,),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.blueAccent,
+                      ),
                     ),
                   ),
                 )
