@@ -20,7 +20,6 @@ class _ProfilePageState extends State<ProfilePage> {
     _loadUserData();
   }
 
-
   Future<void> _loadUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -30,7 +29,6 @@ class _ProfilePageState extends State<ProfilePage> {
       emailController.text = email;
     });
   }
-
 
   Future<void> saveUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -45,16 +43,12 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile"),
-        centerTitle: true,
-
-      ),
+      appBar: AppBar(title: const Text("Profile"), centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-             TextField(
+            TextField(
               controller: nameController,
               decoration: const InputDecoration(labelText: "Name"),
             ),
@@ -70,12 +64,17 @@ class _ProfilePageState extends State<ProfilePage> {
               onPressed: () {
                 saveUserData();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text("Profile updated successfully!")),
+                  const SnackBar(
+                    content: Text("Profile updated successfully!"),
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
+                ),
               ),
               child: const Text(
                 "Save Profile",

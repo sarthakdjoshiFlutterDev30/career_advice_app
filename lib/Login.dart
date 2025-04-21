@@ -14,30 +14,29 @@ class _LoginState extends State<Login> {
   var email = TextEditingController();
   var Password = TextEditingController();
   var Name = TextEditingController();
+
   Future<void> login() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? storedEmail = prefs.getString('email');
     String? storedPassword = prefs.getString('password');
 
     if (email.text == storedEmail && Password.text == storedPassword) {
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login Successful!")),
-        );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Login Successful!")));
       await prefs.setBool('login', true);
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => CareerSelector()),
       );
-
     } else {
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Invalid email or password")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text("Invalid email or password")));
     }
   }
-    @override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Login Page")),
@@ -46,7 +45,7 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           TextField(
+            TextField(
               controller: email,
               decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.email),
@@ -56,7 +55,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             TextField(
               controller: Password,
               obscureText: true,
@@ -69,21 +68,24 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {
-                      login();
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.greenAccent,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero)),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white),
-                  )),
+                onPressed: () {
+                  login();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ],
         ),

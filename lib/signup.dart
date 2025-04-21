@@ -14,6 +14,7 @@ class _SignupState extends State<Signup> {
   var email = TextEditingController();
   var Password = TextEditingController();
   var Name = TextEditingController();
+
   Future<void> saveUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', Name.text);
@@ -21,13 +22,11 @@ class _SignupState extends State<Signup> {
     await prefs.setString('password', Password.text);
     // You can also add more fields if needed
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("SignUp"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text("SignUp"), centerTitle: true),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(8.0),
         child: Column(
@@ -43,7 +42,7 @@ class _SignupState extends State<Signup> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             TextField(
               controller: email,
               decoration: InputDecoration(
@@ -54,7 +53,7 @@ class _SignupState extends State<Signup> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             TextField(
               controller: Password,
               obscureText: true,
@@ -67,47 +66,51 @@ class _SignupState extends State<Signup> {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {
-                   saveUserData().then((_){
-                     Navigator.pushReplacement(
-                         context,
-                         MaterialPageRoute(
-                           builder: (context) => const Login(),
-                         ));
-                   });
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.greenAccent,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero)),
-                  child: const Text(
-                    "Signup",
-                    style: TextStyle(color: Colors.white),
-                  )),
-            ),
-            SizedBox(height: 10,),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {
+                onPressed: () {
+                  saveUserData().then((_) {
                     Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Login(),
-                        ));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.greenAccent,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.zero)),
-                  child: const Text(
-                    "Login",
-                    style: TextStyle(color: Colors.white),
-                  )),
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
+                  });
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  "Signup",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Login()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
           ],
         ),
